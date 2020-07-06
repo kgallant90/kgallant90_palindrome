@@ -1,6 +1,23 @@
 require "kgallant90_palindrome/version"
 
-module Kgallant90Palindrome
-  class Error < StandardError; end
-  # Your code goes here...
+module Palindrome
+  # Returns true for a palindrome, false otherwise.
+  def palindrome?
+    processed_content == processed_content.reverse
+  end
+
+  private
+    # Returns content for palindrome testing
+    def processed_content
+      self.to_s.scan(/[a-z]/i).join.downcase
+    end
+end
+
+# Defines a Phrase class.
+class String
+  include Palindrome
+end
+
+class Integer
+  include Palindrome
 end
