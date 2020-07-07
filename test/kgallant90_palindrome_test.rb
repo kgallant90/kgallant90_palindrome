@@ -14,4 +14,7 @@ class Kgallant90PalindromeTest < Minitest::Test
   def test_palindrome_with_punctuation
     assert "Madam, I'm Adam.".palindrome?
   end
+  def test_blank
+    refute "".palindrome?
+  end
 end

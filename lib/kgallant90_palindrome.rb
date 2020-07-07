@@ -3,7 +3,11 @@ require "kgallant90_palindrome/version"
 module Palindrome
   # Returns true for a palindrome, false otherwise.
   def palindrome?
-    processed_content == processed_content.reverse
+    if processed_content.empty?
+      !processed_content.empty?
+    else
+      processed_content == processed_content.reverse
+    end 
   end
 
   private
